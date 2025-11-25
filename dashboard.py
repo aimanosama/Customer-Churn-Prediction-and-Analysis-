@@ -481,8 +481,6 @@ def update_dashboard(state):
             fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8)
 
 
-server = app.server
-
 if __name__ == "__main__":
-    app.run_server(host="0.0.0.0", port=8050, debug=True)
+    app.run(debug=True)
 
