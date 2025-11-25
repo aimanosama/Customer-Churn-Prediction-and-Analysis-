@@ -103,5 +103,3 @@ if st.button("Predict Churn"):
         st.write(f"Churn Probability: **{prob:.2f}**")
 
 st.markdown("---")
-st.write("Notes:")
-st.write("- Make sure your input features match the training features exactly.")
