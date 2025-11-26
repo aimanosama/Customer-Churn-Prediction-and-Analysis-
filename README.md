@@ -11,7 +11,7 @@ dashboards.
 1.  **Clone the repository**
 
 ``` bash
-git clone Customer-Churn-Prediction-and-Analysis-
+git clone https://github.com/aimanosama/Customer-Churn-Prediction-and-Analysis-
 cd Customer-Churn-Prediction-and-Analysis-
 ```
 
