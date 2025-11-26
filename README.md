@@ -48,8 +48,9 @@ python script_name.py
 -   Outputs appear in:
 
 ```{=html}
-```
     results/ | models/
+```
+
 
 ------------------------------------------------------------------------
 
