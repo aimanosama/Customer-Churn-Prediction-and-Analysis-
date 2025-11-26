@@ -54,7 +54,7 @@ python script_name.py
 
 ------------------------------------------------------------------------
 
-## 3. Dashboards
+## 3. Deployment and Dashboard
 
 ### Run Streamlit Locally
 
@@ -66,7 +66,7 @@ Opens at: **http://localhost:8501**
 
 ------------------------------------------------------------------------
 
-### Streamlit Hosted Dashboard
+### Streamlit Hosted
 
 Open in browser:
 **https://customer-churn-prediction-depi.streamlit.app/**
@@ -82,4 +82,3 @@ Open in browser: **https://aimanosama.pythonanywhere.com/**
 ## 4. Notes
 
 -   Keep data files inside `data/`
--   Train models at least once before opening dashboards
