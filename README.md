@@ -2,7 +2,7 @@
 
 A complete project that processes customer data, runs analysis in
 notebooks, trains models, and provides an interactive UI using
-Streamlit.
+dashboards.
 
 ------------------------------------------------------------------------
 
@@ -15,12 +15,12 @@ git clone Customer-Churn-Prediction-and-Analysis-
 cd Customer-Churn-Prediction-and-Analysis-
 ```
 
-2.  **Create and activate a virtual environment**
+2.  **Create and activate virtual environment**
 
 ``` bash
 python -m venv venv
-source venv/bin/activate     # Linux / macOS
-venv\Scripts\activate      # Windows
+source venv/bin/activate    
+venv\Scripts\activate     
 ```
 
 3.  **Install dependencies**
@@ -33,13 +33,13 @@ pip install -r requirements.txt
 
 ## 2. Run Notebooks / Scripts
 
--   Open and run Jupyter notebooks inside the `notebooks/` folder:
+-   Launch Jupyter:
 
 ``` bash
 jupyter notebook
 ```
 
--   Run root-level scripts:
+-   Run scripts:
 
 ``` bash
 python script_name.py
@@ -54,32 +54,32 @@ python script_name.py
 
 ------------------------------------------------------------------------
 
-## 3. Serve Streamlit App
+## 3. Dashboards
 
-To launch the dashboard and prediction UI locally:
+### Run Streamlit Locally
 
 ``` bash
 streamlit run ui/app.py
 ```
 
--   Opens at: **http://localhost:8501**
+Opens at: **http://localhost:8501**
 
 ------------------------------------------------------------------------
 
-## Project Structure
+### Streamlit Hosted Dashboard
 
-    Customer-Churn-Prediction-and-Analysis-/
-    ├── data/         # datasets
-    ├── notebooks/    # analysis and experiments
-    ├── models/       # saved model files
-    ├── ui/           # Streamlit app scripts
-    ├── results/      # outputs and charts
-    ├── reports/      # summary files
-    └── requirements.txt
+Open in browser:
+**https://customer-churn-prediction-depi.streamlit.app/**
 
 ------------------------------------------------------------------------
 
-## Notes
+### Dashboard
 
--   Keep data files in `data/`
--   Train models once before using Streamlit UI
+Open in browser: **https://aimanosama.pythonanywhere.com/**
+
+------------------------------------------------------------------------
+
+## 4. Notes
+
+-   Keep data files inside `data/`
+-   Train models at least once before opening dashboards
