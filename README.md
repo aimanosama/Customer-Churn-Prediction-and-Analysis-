@@ -50,7 +50,7 @@ python script_name.py
 ```{=html}
 <!-- -->
 ```
-    results/ | reports/ | models/
+    results/ | models/
 
 ------------------------------------------------------------------------
 
