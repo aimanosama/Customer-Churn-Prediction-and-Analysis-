@@ -130,7 +130,7 @@ app.layout = html.Div([
 
     # Footer
     html.Div([
-        html.P("© 2025 Churn Analytics Platform • Powered by AI", className="footer-text")
+        html.P("© 2025 Churn Analytics Platform", className="footer-text")
     ], className="footer"),
 
 ], className="main-container")
@@ -483,4 +483,5 @@ def update_dashboard(state):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
