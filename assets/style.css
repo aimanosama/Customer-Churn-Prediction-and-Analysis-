@@ -83,6 +83,8 @@ body {
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     border: 1px solid rgba(102, 126, 234, 0.2);
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .filter-box:hover {
@@ -108,10 +110,8 @@ body {
 
 /* Dropdown styling: make full-length labels visible and text black */
 .custom-dropdown {
-    /* allow dropdown to size to content if needed; still responsive */
-    min-width: 280px;
-    max-width: 100%;
     width: 100%;
+    position: relative;
 }
 
 /* React-Select / Dash dropdown selectors */
@@ -121,67 +121,22 @@ body {
     background-color: rgba(10, 14, 39, 0.6) !important;
     border: 2px solid rgba(102, 126, 234, 0.3) !important;
     border-radius: 12px !important;
-    padding: 8px !important;
-    color: #000000 !important; /* selected value color */
-    min-width: 100% !important;
-    max-width: none !important;
-    white-space: normal !important; /* allow wrap */
+    padding: 6px !important;
+    color: #000000 !important;
+    width: 300% !important;
+    white-space: normal !important;
 }
 
 .custom-dropdown .Select__single-value,
 .custom-dropdown .Select-value,
 .custom-dropdown .css-1uccc91-singleValue {
-    color: #000000 !important; /* selected value color */
-    white-space: normal !important; /* show full text (wrap if needed) */
+    color: #000000 !important;
+    white-space: normal !important;
     overflow: visible !important;
     text-overflow: clip !important;
 }
 
-.custom-dropdown .Select__menu,
-.custom-dropdown .Select-menu-outer,
-.custom-dropdown .css-26l3qy-menu {
-    background-color: #ffffff !important; /* white background for options */
-    color: #000000 !important; /* option text color */
-    max-width: none !important;
-    width: max-content !important; /* let menu expand to content */
-    white-space: normal !important; /* allow multi-line option text */
-}
-
-.custom-dropdown .Select__option,
-.custom-dropdown .Select-option,
-.custom-dropdown .css-yt9ioa-option {
-    color: #000000 !important;
-    white-space: normal !important;
-    padding: 8px 12px !important;
-}
-
-/* Ensure the currently highlighted option remains readable */
-.custom-dropdown .Select__option.is-focused,
-.custom-dropdown .Select-option.is-focused,
-.custom-dropdown .css-yt9ioa-option--is-focused {
-    background-color: rgba(102,126,234,0.15) !important;
-}
-
-/* For very long single-line values, allow them to wrap instead of being clipped */
-.custom-dropdown .Select__control .css-1uccc91-singleValue,
-.custom-dropdown .Select__single-value {
-    display: block !important;
-}
-
-/* ---------- Dropdown visibility + menu fixes ---------- */
-
-/* ensure control sits above background so menu can overlap cleanly */
-.custom-dropdown .Select__control,
-.custom-dropdown .Select-control,
-.custom-dropdown .css-1wy0on6,
-.Select__control,
-.Select-control,
-.css-1wy0on6 {
-    position: relative !important;
-    z-index: 2 !important;
-}
-
-/* menu container (covers many react-select class name variants) */
+/* ---------- FIXED DROPDOWN MENU STYLES ---------- */
 .custom-dropdown .Select__menu,
 .custom-dropdown .Select-menu-outer,
 .custom-dropdown .css-26l3qy-menu,
@@ -192,17 +147,28 @@ body {
 .css-1gtu0rj-menu {
     background-color: #ffffff !important;
     color: #000000 !important;
-    z-index: 99999 !important;        /* appear above everything */
-    position: absolute !important;   /* make sure it floats */
+    z-index: 9999 !important;
+    position: absolute !important;
     box-shadow: 0 8px 30px rgba(0,0,0,0.35) !important;
-    max-height: 320px !important;    /* scroll if too tall */
+    max-height: 320px !important;
     overflow-y: auto !important;
-    width: max-content !important;    /* expand to fit content; avoids clipping */
-    min-width: 280px !important;
-    white-space: normal !important;   /* allow wrapping */
+    width: 200px !important;
+    min-width: 100% !important;
+    white-space: normal !important;
+    /* Ensure menu appears above other elements */
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 4px !important;
 }
 
-/* menu list & options */
+/* Menu container - ensure proper positioning */
+.Select__menu-container,
+.Select-menu-container {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+/* Menu list & options */
 .custom-dropdown .Select__menu-list,
 .custom-dropdown .Select-menu,
 .custom-dropdown .css-1pahdxg-control,
@@ -211,6 +177,7 @@ body {
 .css-1pahdxg-control {
     color: #000000 !important;
     white-space: normal !important;
+    position: static !important;
 }
 
 /* individual option */
@@ -224,6 +191,7 @@ body {
     background: transparent !important;
     padding: 8px 12px !important;
     white-space: normal !important;
+    word-wrap: break-word !important;
 }
 
 /* focused / hovered option highlight (readable) */
@@ -237,14 +205,22 @@ body {
     color: #000 !important;
 }
 
-/* If the dropdown uses a portal (appends menu to body), these global rules help */
-.Select__menu,
-.Select-menu-outer,
-.css-26l3qy-menu,
-.css-1gtu0rj-menu {
-    z-index: 99999 !important;
-    background: #fff !important;
-    color: #000 !important;
+/* For very long single-line values, allow them to wrap instead of being clipped */
+.custom-dropdown .Select__control .css-1uccc91-singleValue,
+.custom-dropdown .Select__single-value {
+    display: block !important;
+    white-space: normal !important;
+}
+
+/* Ensure the dropdown container doesn't clip the menu */
+.filter-box {
+    position: relative;
+    z-index: 1;
+}
+
+/* When dropdown is open, ensure it appears above other filter boxes */
+.filter-box .Select--menu-is-open {
+    z-index: 10000 !important;
 }
 
 /* KPIs */
