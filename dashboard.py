@@ -483,5 +483,3 @@ def update_dashboard(state):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
